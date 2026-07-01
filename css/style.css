@@ -1257,7 +1257,7 @@ body.lang-en .zh { display: none !important; }
 .exp-dept { display: block; margin-top: 4px; font-size: 1.3rem; color: var(--muted); }
 .exp-role { font-size: 1.18rem; font-weight: 600; color: var(--ink); line-height: 1.35; margin-bottom: 16px; }
 .exp-role .exp-time { color: var(--accent); }
-.exp-role .exp-sep { margin: 0 10px; color: var(--muted); font-weight: 400; }
+.exp-role .exp-time { margin-right: 14px; }
 
 /* 社团活动 */
 .clubs-list { display: grid; gap: 0; }
@@ -1281,3 +1281,7 @@ body.lang-en .club-head .cell { margin-right: 20px; }
 .news-item div { font-size: 1.12rem; }
 .skills-grid dt { font-size: 1.1rem; }
 .skills-grid dd { font-size: 1.12rem; }
+
+/* 实习卡片左侧公司 logo */
+.logo-preview { background: #fff; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.logo-preview img { max-height: 144px; max-width: 80%; width: auto; object-fit: contain; }
