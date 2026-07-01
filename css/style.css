@@ -1211,9 +1211,8 @@ body,
 /* ===== 语言切换按钮 ===== */
 .lang-bar {
     display: flex;
-    justify-content: flex-end;
     gap: 8px;
-    padding: 2px 0 12px;
+    padding: 0;
 }
 .lang-btn {
     min-height: 34px;
@@ -1241,9 +1240,6 @@ body,
 body.lang-zh .en { display: none !important; }
 body.lang-en .zh { display: none !important; }
 
-/* 移除站名后，导航链接保持右对齐 */
-.home-nav__links { margin-left: auto; }
-
 /* 教育卡片：宽度自适应内容（每种语言都刚好容下，最少留白） */
 .affiliation-card { flex: 0 0 auto; }
 .affiliation-mark { min-height: 108px; padding: 0; }
@@ -1256,9 +1252,9 @@ body.lang-en .zh { display: none !important; }
 
 /* 实习卡片：图片下方公司/部门说明 + 右侧首行(时间·职位) */
 .exp-media { display: flex; flex-direction: column; }
-.exp-caption { padding-top: 12px; text-align: center; }
-.exp-co { display: block; font-size: 1.15rem; font-weight: 700; color: var(--ink); line-height: 1.3; }
-.exp-dept { display: block; margin-top: 4px; font-size: 0.98rem; color: var(--muted); }
+.exp-caption { padding-top: 12px; text-align: left; }
+.exp-co { display: block; font-size: 1.5rem; font-weight: 700; color: var(--ink); line-height: 1.3; }
+.exp-dept { display: block; margin-top: 4px; font-size: 1.3rem; color: var(--muted); }
 .exp-role { font-size: 1.18rem; font-weight: 600; color: var(--ink); line-height: 1.35; margin-bottom: 16px; }
 .exp-role .exp-time { color: var(--accent); }
 .exp-role .exp-sep { margin: 0 10px; color: var(--muted); font-weight: 400; }

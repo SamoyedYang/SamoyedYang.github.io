@@ -13,7 +13,7 @@
 
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Serif+JP&family=Cormorant+Garamond&family=Libre+Baskerville&family=Source+Serif+Pro&family=Crimson+Text&family=Inter&family=Crimson+Pro&family=Literata&family=Ubuntu+Mono&family=Inter&family=Roboto">
-    <link rel="stylesheet" type="text/css" href="/css/style.css?v=5">
+    <link rel="stylesheet" type="text/css" href="/css/style.css?v=6">
 
     <title>李扬 Li Yang</title>
 
@@ -24,18 +24,16 @@
 
 <main class="homepage-shell">
 
-    <div class="lang-bar" role="group" aria-label="Language">
-        <button type="button" class="lang-btn" data-lang="zh" aria-pressed="true">中文</button>
-        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">English</button>
-    </div>
-
     <nav class="home-nav" aria-label="Primary">
+        <div class="lang-bar" role="group" aria-label="Language">
+            <button type="button" class="lang-btn" data-lang="zh" aria-pressed="true">中文</button>
+            <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">English</button>
+        </div>
         <div class="home-nav__links">
             <a href="#education"><span class="zh">教育</span><span class="en">Education</span></a>
             <a href="#experience"><span class="zh">实习经历</span><span class="en">Experience</span></a>
             <a href="#honors"><span class="zh">荣誉与社团</span><span class="en">Honors</span></a>
             <a href="#skills"><span class="zh">技能</span><span class="en">Skills</span></a>
-            <a href="cv.pdf" target="_blank" rel="noopener"><span class="zh">简历</span><span class="en">CV</span></a>
         </div>
     </nav>
 
@@ -269,6 +267,14 @@
     feather.replace();
     (function () {
         var btns = document.querySelectorAll('.lang-btn');
+        function equalizeCards() {
+            var cards = document.querySelectorAll('.affiliation-card');
+            if (!cards.length) return;
+            cards.forEach(function (c) { c.style.flexBasis = 'auto'; });
+            var max = 0;
+            cards.forEach(function (c) { if (c.offsetWidth > max) max = c.offsetWidth; });
+            cards.forEach(function (c) { c.style.flexBasis = max + 'px'; });
+        }
         function setLang(lang) {
             document.body.classList.toggle('lang-zh', lang === 'zh');
             document.body.classList.toggle('lang-en', lang === 'en');
@@ -277,6 +283,7 @@
                 b.setAttribute('aria-pressed', b.dataset.lang === lang ? 'true' : 'false');
             });
             try { localStorage.setItem('lang', lang); } catch (e) {}
+            requestAnimationFrame(equalizeCards);
         }
         btns.forEach(function (b) {
             b.addEventListener('click', function () { setLang(b.dataset.lang); });
@@ -284,6 +291,9 @@
         var saved = null;
         try { saved = localStorage.getItem('lang'); } catch (e) {}
         if (saved === 'zh' || saved === 'en') setLang(saved);
+        equalizeCards();
+        window.addEventListener('load', equalizeCards);
+        window.addEventListener('resize', equalizeCards);
     })();
 </script></body>
 
