@@ -1196,6 +1196,9 @@ body,
     font-weight: 700;
     font-family: "Times New Roman", Times, serif !important;
 }
+.section-heading h2 {
+    font-family: "Times New Roman", Times, serif !important;
+}
 
 /* 教育卡片标识改为非 span，避免与年份药丸样式冲突 */
 .affiliation-mark .aff-initial {
