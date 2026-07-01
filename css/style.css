@@ -1109,7 +1109,7 @@ footer {
     padding-left: 18px;
     margin-bottom: 10px;
     color: #302b27;
-    font-size: 0.97rem;
+    font-size: 1.06rem;
     line-height: 1.62;
 }
 .exp-highlights li:last-child { margin-bottom: 0; }
@@ -1276,8 +1276,7 @@ body.lang-zh .club-head {
 body.lang-en .club-head { display: block; }
 body.lang-en .club-head .cell { margin-right: 20px; }
 
-/* 03/04/05 其余正文统一放大 */
-.club-item .exp-highlights li { font-size: 1.12rem; }
+/* 03/04/05 其余正文统一放大（实习/社团正文与顶部自我介绍一致：.exp-highlights li 1.06rem）*/
 .news-item time { font-size: 1.1rem; }
 .news-item div { font-size: 1.12rem; }
 .skills-grid dt { font-size: 1.1rem; }
