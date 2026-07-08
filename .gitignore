@@ -7,3 +7,6 @@ __MACOSX/
 .vscode/
 .idea/
 *.swp
+
+# 原始素材（已处理为 profile.jpg）
+profile02.*
